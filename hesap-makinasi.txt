@@ -1,0 +1,100 @@
+import java.util.Scanner;
+public class hesapmakinasi {
+    static int sum(int a,int b) {
+      int result=a+b;
+        System.out.println("Toplam="+result);
+        return result;
+    }
+    static int minus(int a,int b) {
+        int result=a-b;
+        System.out.println("Fark="+result);
+        return result;
+    }
+    static int times(int a,int b) {
+        int result=a*b;
+        System.out.println("Çarpım="+result);
+        return result;
+    }
+    static int divided(int a,int b) {
+        if (b==0){
+            System.out.println("Bölüm sıfırdan farklı bir değer olmalı!!!");
+        }
+        int result=a/b;
+        System.out.println("Sonuc="+result);
+        return result;
+    }
+    static int power(int a,int b) {
+        int result = 1;
+        for (int i = 1; i <= b; i++) {
+            result *= a;
+        }
+        System.out.println(a+"="+"Taban Değeri");
+        System.out.println(b+"="+"Taban Değeri");
+        System.out.println("Sonuç="+result);
+        return result;
+    }
+    static int mod(int a,int b) {
+            int result = a%b;
+        System.out.println(a+" "+"mod="+b+" "+result);
+        return result;
+    }
+    static int area(int a,int b) {
+        int result = a*b;
+        int k = 2*(a+b);
+
+        System.out.println("ALAN="+result);
+        System.out.println("ÇEVRE="+k);
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner inp=new Scanner(System.in);
+        int select;
+        String menu="1-Toplama İşlemi\n"
+                    +"2-Çıkarma İşlemi\n"
+                    +"3-Çarpma İşlemi\n"
+                    +"4-Bölme İşlemi\n"
+                    +"5-Üslü Sayı Hesaplama\n"
+                    +"6-Mod Alma\n"
+                    +"7-Didörtgen Alan ve Çevre Hesabı\n"
+                    +"0-Çıkış Yap";
+
+        while (true){
+            System.out.println(menu);
+            System.out.print("Lütfen Yapmak İstediğiniz İşlemi Giriniz:");
+            select=inp.nextInt();
+            if (select==0){
+                break;
+            }
+            System.out.print("1.sayıyı giriniz=");
+            int a=inp.nextInt();
+            System.out.print("2.sayıyı giriniz=");
+            int b=inp.nextInt();
+            int result=0;
+            switch (select){
+                case 1:
+                    sum(a,b);
+                    break;
+                default:
+                case 2:
+                    minus(a,b);
+                    break;
+                case 3:
+                    times(a,b);
+                    break;
+                case 4:
+                    divided(a,b);
+                    break;
+                case 5:
+                    power(a,b);
+                    break;
+                case 6:
+                    mod(a,b);
+                    break;
+                case 7:
+                    area(a,b);
+                    break;
+            }
+        }
+        System.out.print("güle güle");
+}}
